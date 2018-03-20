@@ -10,6 +10,7 @@ def normal_dist(x,mean,sigma):
     c = (x-mean)**2
     b = np.exp(-1*(c)/float(sigma**2))
     sol = a*b
+    return sol
 
 #Funcion que carga array de promedios
 #y genera histograma a partir de los datos cargados
@@ -19,6 +20,7 @@ def get_fit(filename):
     data = np.genfromtxt(filename, usecols = 0)
     #Retorna frecuencias y limites de hist
     freqs,bins = np.histogram(data, normed = True)
+    data
     
     #Optimizar curva
     #frecuencias
@@ -29,12 +31,12 @@ def get_fit(filename):
     popt, pcov = sc.curve_fit(normal_dist,x,y)
     mean = popt[0]
     sigma = popt[1]
-    xx = linspace(np.min(data),np.max(data),100)
+    xx = np.linspace(np.min(data),np.max(data),100)
     yy = normal_dist(xx,mean,sigma)
 
     plt.plot(xx,yy, label = "ajuste normal")
     plt.hist(data)
-    plt.save(filename+str(".png"))
+    plt.savefig(filename+str(".png"))
     plt.clf()
 
 get_fit("sample_1_10.txt")
