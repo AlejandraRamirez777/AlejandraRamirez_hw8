@@ -41,7 +41,7 @@ def get_fit(filename):
 
 K = ["sample_1_10.txt","sample_1_100.txt","sample_1_1000.txt","sample_2_10.txt","sample_2_100.txt","sample_2_1000.txt"]
 for i in K:
-    get_fit(K)
+    get_fit(i)
     
     
 
