@@ -38,6 +38,7 @@ M = 10000
 #Array N
 N = [10,100,1000]
 
+#Strings de nombres de archivos
 s1 = "sample_1_"
 s2 = "sample_2_"
 en = ".txt"
@@ -45,8 +46,10 @@ en = ".txt"
 
 #Genera cada elemento en N genera M promedios para sample_1 y sample_2
 for i in N:
+    #Crear los archivos para sample_1
     n1 = get_mean(sample_1,i,M)
     np.savetxt(s1 + str(i)+en,n1)
+    #Crear los archivos para sample_2
     n2 = get_mean(sample_2,i,M)
     np.savetxt(s2 + str(i)+en,n2)
     
