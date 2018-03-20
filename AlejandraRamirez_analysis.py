@@ -39,7 +39,7 @@ def get_fit(filename):
     plt.savefig(filename+str(".png"))
     plt.clf()
 
-K = ["sample_1_10.xt","sample_1_100.xt","sample_1_1000.xt","sample_2_10.xt","sample_2_100.xt","sample_2_1000.xt"]
+K = ["sample_1_10.txt","sample_1_100.txt","sample_1_1000.txt","sample_2_10.txt","sample_2_100.txt","sample_2_1000.txt"]
 for i in K:
     get_fit(K)
     
